@@ -199,6 +199,7 @@ local db = {
 	[271107] = { nil, 271107, nil }, --Golden Luster
 	[278317] = { nil, 278317, nil }, --Doom's wake
     [313948] = { nil, 313948, nil }, --Manifesto of Madness: Chapter One BFA
+    --[285482] = { nil, 285482, nil }, --Ferocity of the Skrog BFA
 	--[] = { nil, , nil }, --
 }
 
@@ -219,6 +220,9 @@ end
 
 function ItemEnchantInfo:getReceipeSpell()
     local rec = db[self.enchantId]
+    if rec == nil then
+        rec = { nil, self.enchantId, nil }
+    end
     return rec and rec[RECEIPE_ID] and addonNamespace.SpellInfo:new("spell:"..rec[RECEIPE_ID])
 end
 
