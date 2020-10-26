@@ -57,10 +57,22 @@ function SlotIconManager:new(adapter)
             SecondaryHandSlot = true,
         },
         slotsWithRequiredEnchants = {
-			HandsSlot = true,
+            -- HeadSlot = true,
+            -- NeckSlot = true,
+            -- ShoulderSlot = true,
+            -- BackSlot = true,
+            -- ChestSlot = true,
+            -- WristSlot = true,
+            -- HandsSlot = true,
+            -- WaistSlot = true,
+            -- LegsSlot = true,
+            -- FeetSlot = true,
             Finger0Slot = true,
             Finger1Slot = true,
-			MainHandSlot = true,
+            -- Trinket0Slot = true,
+            -- Trinket1Slot = true,
+            MainHandSlot = true,
+            -- SecondaryHandSlot = true,
         },
         itemInfos = nil,
         parentVisible = false,
@@ -302,17 +314,17 @@ end
 function SlotIconManager:_AddEnchants()
     for slotName, itemInfo in pairs(self:GetItemInfoForAllSlots()) do
         if itemInfo then
-			--self:Debug("Slot Name: "..slotName.." Item Info: Present")
+            --self:Debug("Slot Name: "..slotName.." Item Info: Present")
             local tooltip = addonNamespace.Tooltip:new()
             local enchantInfo = itemInfo:getEnchantInfo()
-			local spellInfo = itemInfo:getUseSpellInfo()
+            local spellInfo = itemInfo:getUseSpellInfo()
 
-			if spellInfo and not enchantInfo then
-				enchantInfo = spellInfo
-			end
+            if spellInfo and not enchantInfo then
+                enchantInfo = spellInfo
+            end
 
             if enchantInfo then
-				self:Debug("Slot Name: "..slotName.." Enchant Info: Present")
+                self:Debug("Slot Name: "..slotName.." Enchant Info: Present")
                 local consumable = enchantInfo:getConsumableItem()
                 local formula = enchantInfo:getFormulaItem()
                 local receipe = enchantInfo:getReceipeSpell()
@@ -321,7 +333,7 @@ function SlotIconManager:_AddEnchants()
                         or formula and formula:getTextureName()
                         or receipe and receipe:getTextureName()
                         or "INTERFACE/ICONS/INV_Misc_QuestionMark"
-					self:Debug("Slot: "..slotName.."Id: "..enchantInfo:getId())
+                    self:Debug("Slot: "..slotName.."Id: "..enchantInfo:getId())
                 if consumable then
                     tooltip:AddHyperlink(consumable:getLink())
                 elseif formula then
@@ -338,12 +350,12 @@ function SlotIconManager:_AddEnchants()
 
                 self:_AddIcon(slotName, texture, tooltip)
             elseif self:IsSlotEnchantRequired(slotName) then
-				self:Debug("Slot Name: "..slotName.." Enchant Info: Not Present")
+                self:Debug("Slot Name: "..slotName.." Enchant Info: Not Present")
                 tooltip:AddText(L["Missing enchant"])
                 self:_AddIcon(slotName, "INTERFACE/BUTTONS/UI-GROUPLOOT-PASS-UP", tooltip)
             end
-		else
-			self:Debug("Slot Name: "..slotName.." Item Info: Not Present")
+        else
+            self:Debug("Slot Name: "..slotName.." Item Info: Not Present")
         end
     end
 end
