@@ -27,7 +27,11 @@ function SpellInfo:new(itemString)
 end
 
 function SpellInfo:getLink()
-    return GetSpellLink(self.spellId) or "|cffffd000|Henchant:"..self.spellId.."|h["..GetSpellInfo(self.spellId).."]|h|r"
+    if GetSpellLink(self.spellId) == nil then
+        return nil
+    else 
+        return GetSpellLink(self.spellId) or "|cffffd000|Henchant:"..self.spellId.."|h["..GetSpellInfo(self.spellId).."]|h|r"
+    end
 end
 
 function SpellInfo:getTextureName()
