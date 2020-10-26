@@ -179,7 +179,7 @@ local db = {
 
     -- Enchant Weapon
     [5946] = { 153476, 255103, nil }, --Coastal Surge
-    [5650] = { 153480, 255141, nil }, --Gale-Force Striking
+    [5950] = { 153480, 255141, nil }, --Gale-Force Striking
     [5949] = { 153479, 255129, nil }, --Torrent of Elements
     [5948] = { 153478, 255110, nil }, --Siphoning
     [5965] = { 159785, 268907, nil }, --Deadly Navigation
