@@ -13,12 +13,12 @@ local RECEIPE_ID = 2
 local FORMULA_ID = 3
 
 local db = {
-	-- Burning Crusade
-	[36480] = { nil, 36480, nil }, --Mental Portection Field
+    -- Burning Crusade
+    [36480] = { nil, 36480, nil }, --Mental Portection Field
 
-	-- Northrend
-	[55004] = { nil, 55016, nil }, -- Nitro Boost
-	[126389] = { nil, 126392, nil }, -- Goblin Glider
+    -- Northrend
+    [55004] = { nil, 55016, nil }, -- Nitro Boost
+    [126389] = { nil, 126392, nil }, -- Goblin Glider
 
     -- WoD:
 
@@ -136,10 +136,10 @@ local db = {
     [5888] = { 141861, 228139, nil }, -- Boon of the Nether
     [5931] = { 153247, 254706, nil }, -- Boon of the Lightbearer
     [5929] = { 153197, 254584, nil }, -- Boon of the Steadfast
-	[5899] = { 144328, 235731, nil }, -- Boon of the Builder
-	[5900] = { 144346, 235795, nil }, -- Boon of the Zookeeper
+    [5899] = { 144328, 235731, nil }, -- Boon of the Builder
+    [5900] = { 144346, 235795, nil }, -- Boon of the Zookeeper
 
-	--BfA
+    --BfA
 
     [6108] = { 168446, 298009, nil }, -- Accord of Critical Strike
     [6109] = { 168447, 297989, nil }, -- Accord of Haste
@@ -155,52 +155,52 @@ local db = {
 
     [318378] = { nil, 318378, nil }, --Steadfast Resolve
 
-	--Enchant Ring
-	[5942] = { 153442, 255075, 162716 }, -- Pact of Critical Strike
-	[5943] = { 153443, 255076, 162717 }, -- Pact of Haste
-	[5944] = { 153444, 255077, 162718 }, -- Pact of Mastery
-	[5945] = { 153445, 255078, 162719 }, -- Pact of Versatility
-	[5938] = { 153438, 255071, 162298 }, -- Seal of Critical Strike
-	[5939] = { 153439, 255072, 162299 }, -- Seal of Haste
-	[5940] = { 153440, 255073, 162300 }, -- Seal of Mastery
-	[5941] = { 153441, 255074, 162301 }, -- Seal of Versatility
+    --Enchant Ring
+    [5942] = { 153442, 255075, 162716 }, -- Pact of Critical Strike
+    [5943] = { 153443, 255076, 162717 }, -- Pact of Haste
+    [5944] = { 153444, 255077, 162718 }, -- Pact of Mastery
+    [5945] = { 153445, 255078, 162719 }, -- Pact of Versatility
+    [5938] = { 153438, 255071, 162298 }, -- Seal of Critical Strike
+    [5939] = { 153439, 255072, 162299 }, -- Seal of Haste
+    [5940] = { 153440, 255073, 162300 }, -- Seal of Mastery
+    [5941] = { 153441, 255074, 162301 }, -- Seal of Versatility
 
-	-- Enchant Gloves
-	[5932] = { 159464, 267458, nil }, -- Zandalari Herbalism
-	[5933] = { 159466, 267482, nil }, -- Zandalari Mining
-	[5934] = { 159467, 267486, nil }, -- Zandalari Skinning
-	[5935] = { 159468, 267490, nil }, -- Zandalari Surveying
-	[5937] = { 159471, 267498, nil }, -- Zandalari Crafting
+    -- Enchant Gloves
+    [5932] = { 159464, 267458, nil }, -- Zandalari Herbalism
+    [5933] = { 159466, 267482, nil }, -- Zandalari Mining
+    [5934] = { 159467, 267486, nil }, -- Zandalari Skinning
+    [5935] = { 159468, 267490, nil }, -- Zandalari Surveying
+    [5937] = { 159471, 267498, nil }, -- Zandalari Crafting
 
-	-- Enchant Bracers
-	[5971] = { 160330, 271433, nil }, -- Cooled Hearthing
-	[5970] = { 160328, 271366, nil }, -- Safe Hearthing
-	[5936] = { 159469, 267495, nil }, -- Swift Hearthing
+    -- Enchant Bracers
+    [5971] = { 160330, 271433, nil }, -- Cooled Hearthing
+    [5970] = { 160328, 271366, nil }, -- Safe Hearthing
+    [5936] = { 159469, 267495, nil }, -- Swift Hearthing
 
-	-- Enchant Weapon
-	[5946] = { 153476, 255103, nil }, --Coastal Surge
-	[5650] = { 153480, 255141, nil }, --Gale-Force Striking
-	[5949] = { 153479, 255129, nil }, --Torrent of Elements
-	[5948] = { 153478, 255110, nil }, --Siphoning
-	[5965] = { 159785, 268907, nil }, --Deadly Navigation
-	[5964] = { 159787, 268901, nil }, --Masterful Navigation
-	[5963] = { 159786, 268894, nil }, --Quick Navigation
-	[5966] = { 159789, 268913, nil }, --Stalwart Navigation
-	[5962] = { 159788, 268852, nil }, --Versatile Navigation
+    -- Enchant Weapon
+    [5946] = { 153476, 255103, nil }, --Coastal Surge
+    [5650] = { 153480, 255141, nil }, --Gale-Force Striking
+    [5949] = { 153479, 255129, nil }, --Torrent of Elements
+    [5948] = { 153478, 255110, nil }, --Siphoning
+    [5965] = { 159785, 268907, nil }, --Deadly Navigation
+    [5964] = { 159787, 268901, nil }, --Masterful Navigation
+    [5963] = { 159786, 268894, nil }, --Quick Navigation
+    [5966] = { 159789, 268913, nil }, --Stalwart Navigation
+    [5962] = { 159788, 268852, nil }, --Versatile Navigation
 
-	-- Engineering Ranged Weapon Enchant
-	[5955] = { 158212, 264960, nil }, --Crow's Nest Scope
-	[5958] = { 158377, 265100, nil }, --Frost-Laced Ammunition
-	[5957] = { 158203, 265097, nil }, --Incendiary Ammunition
-	[5956] = { 158327, 264964, nil }, --Monelite Scope of Alacrity
+    -- Engineering Ranged Weapon Enchant
+    [5955] = { 158212, 264960, nil }, --Crow's Nest Scope
+    [5958] = { 158377, 265100, nil }, --Frost-Laced Ammunition
+    [5957] = { 158203, 265097, nil }, --Incendiary Ammunition
+    [5956] = { 158327, 264964, nil }, --Monelite Scope of Alacrity
 
-	-- Trinkets
-	[265954] = { nil, 265954, nil }, --Touch of Gold
-	[271107] = { nil, 271107, nil }, --Golden Luster
-	[278317] = { nil, 278317, nil }, --Doom's wake
+    -- Trinkets
+    [265954] = { nil, 265954, nil }, --Touch of Gold
+    [271107] = { nil, 271107, nil }, --Golden Luster
+    [278317] = { nil, 278317, nil }, --Doom's wake
     [313948] = { nil, 313948, nil }, --Manifesto of Madness: Chapter One BFA
     --[285482] = { nil, 285482, nil }, --Ferocity of the Skrog BFA
-	--[] = { nil, , nil }, --
+    --[] = { nil, , nil }, --
 }
 
 function ItemEnchantInfo:new(enchantId)
