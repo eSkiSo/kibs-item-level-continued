@@ -58,13 +58,13 @@ function SlotIconManager:new(adapter)
         },
         slotsWithRequiredEnchants = {
             BackSlot = true,
-			ChestSlot = true,
-			WristSlot = true,
-			HandsSlot = true,
-			FeetSlot = true,
+            ChestSlot = true,
+            WristSlot = true,
+            HandsSlot = true,
+            FeetSlot = true,
             Finger0Slot = true,
             Finger1Slot = true,
-			MainHandSlot = true,
+            MainHandSlot = true,
         },
         itemInfos = nil,
         parentVisible = false,
@@ -306,11 +306,17 @@ end
 function SlotIconManager:_AddEnchants()
     for slotName, itemInfo in pairs(self:GetItemInfoForAllSlots()) do
         if itemInfo then
-		
-			local tooltip = addonNamespace.Tooltip:new()
+            --self:Debug("Slot Name: "..slotName.." Item Info: Present")
+            local tooltip = addonNamespace.Tooltip:new()
             local enchantInfo = itemInfo:getEnchantInfo()
-				
-            if enchantInfo ~= nil then
+            local spellInfo = itemInfo:getUseSpellInfo()
+
+            if spellInfo and not enchantInfo then
+                enchantInfo = spellInfo
+            end
+
+            if enchantInfo then
+                self:Debug("Slot Name: "..slotName.." Enchant Info: Present")
                 local consumable = enchantInfo:getConsumableItem()
                 local formula = enchantInfo:getFormulaItem()
                 local receipe = enchantInfo:getReceipeSpell()
@@ -319,7 +325,7 @@ function SlotIconManager:_AddEnchants()
                         or formula and formula:getTextureName()
                         or receipe and receipe:getTextureName()
                         or "INTERFACE/ICONS/INV_Misc_QuestionMark"
-
+                    self:Debug("Slot: "..slotName.."Id: "..enchantInfo:getId())
                 if consumable then
                     tooltip:AddHyperlink(consumable:getLink())
                 elseif formula then
@@ -336,9 +342,12 @@ function SlotIconManager:_AddEnchants()
 
                 self:_AddIcon(slotName, texture, tooltip)
             elseif self:IsSlotEnchantRequired(slotName) then
+                self:Debug("Slot Name: "..slotName.." Enchant Info: Not Present")
                 tooltip:AddText(L["Missing enchant"])
                 self:_AddIcon(slotName, "INTERFACE/BUTTONS/UI-GROUPLOOT-PASS-UP", tooltip)
             end
+        else
+            self:Debug("Slot Name: "..slotName.." Item Info: Not Present")
         end
     end
 end
@@ -464,7 +473,7 @@ function SlotIconManager:GetSlotAlignment(slotName)
 end
 
 function SlotIconManager:IsAtMaxLevel()
-    return UnitLevel(self.adapter:GetUnit()) == 60
+    return UnitLevel(self.adapter:GetUnit()) == GetMaxLevelForPlayerExpansion() --MAX_PLAYER_LEVEL_TABLE[GetExpansionLevel()]
 end
 
 function SlotIconManager:IsSlotEnchantRequired(slotName)
