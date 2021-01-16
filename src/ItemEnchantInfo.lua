@@ -201,6 +201,65 @@ local db = {
     [313948] = { nil, 313948, nil }, --Manifesto of Madness: Chapter One BFA
     --[285482] = { nil, 285482, nil }, --Ferocity of the Skrog BFA
     --[] = { nil, , nil }, --
+    
+    --Shadowlands Release
+	
+	-- Enchant Ranged Weapon
+    [6195] = { 172921, 321535, nil }, -- Infra-green Reflex Sight
+    [6196] = { 172920, 321536, nil }, -- Optical Target Embiggener
+	
+	-- Enchant Weapon
+	[6229] = { 172366, 309627, nil }, -- Celestial Guidance
+	[6227] = { 172365, 309622, nil }, -- Ascended Vigor
+	[6226] = { 172367, 309621, nil }, -- Eternal Grace
+	[6223] = { 172370, 309620, nil }, -- Lightless Force
+	[6228] = { 172368, 309623, nil }, -- Sinful Revelation
+	
+	-- Enchant Cloak
+	[6203] = { 172411, 309530, nil }, -- Fortified Avoidance
+	[6204] = { 172412, 309531, nil }, -- Fortified Leech
+	[6202] = { 172410, 309528, nil }, -- Fortified Speed
+	[6208] = { 177660, 323755, nil }, -- Soul Vitality
+	
+	-- Enchant Chest
+	[6216] = { 177716, 323762, nil }, -- Sacred Stats
+	[6265] = { 183738, 342316, nil }, -- Eternal Insight
+	[6213] = { 172418, 309535, nil }, -- Eternal Bulwark
+	[6230] = { 177962, 324773, nil }, -- Eternal Stats
+	[6217] = { 177715, 323761, nil }, -- Eternal Bounds
+	[6214] = { 177659, 323760, nil }, -- Eternal Skirmish
+	
+	-- Enchant Bracers
+	[6222] = { 172416, 309610, nil }, -- Shaded Hearthing
+	[6219] = { 172414, 309608, nil }, -- Illuminated Soul
+	[6220] = { 172415, 309609, nil }, -- Eternal Intellect
+	
+	-- Enchant Gloves
+	[6205] = { 172406, 309524, nil }, -- Shadowlands Gathering
+	[6209] = { 172407, 309525, nil }, -- Strength of Soul
+	[6210] = { 172408, 309526, nil }, -- Eternal Strength
+	
+	-- Enchant Boots
+	[6207] = { 177661, 323609, nil }, -- Soul Treads
+	[6212] = { 172413, 309532, nil }, -- Agile Soulwalker
+	[6211] = { 172419, 309534, nil }, -- Eternal Agility
+	
+	-- Death Knight Runes
+    [6243] = { nil, 326911, nil }, -- Rune of Hysteria
+    [6241] = { nil, 326805, nil }, -- Rune of Sanguination
+    [6242] = { nil, 326855, nil }, -- Rune of Spellwarding
+    [6244] = { nil, 326977, nil }, -- Rune of Unending Thirst
+    [6245] = { nil, 327082, nil }, -- Rune of the Apocalypse
+	
+	--Enchant Ring
+	[6163] = { 172357, 309612, nil }, -- Bargain of  Critical Strike
+	[6165] = { 172358, 309613, nil }, -- Bargain of Haste
+	[6167] = { 172359, 309614, nil }, -- Bargain of Mastery
+	[6169] = { 172360, 309615, nil }, -- Bargain of Versatility
+	[6164] = { 172361, 309616, nil }, -- Tenet of Critical Strike
+	[6166] = { 172362, 309617, nil }, -- Tenet of Haste
+	[6168] = { 172363, 309618, nil }, -- Tenet of Mastery
+	[6170] = { 172364, 309619, nil }, -- Tenet of Versatility
 }
 
 function ItemEnchantInfo:new(enchantId)
