@@ -67,7 +67,7 @@
         </Layers>
 
         <Frames>
-            <CheckButton name="$parentUpgrades" inherits="OptionsCheckButtonTemplate">
+            <CheckButton name="$parentUpgrades" inherits="OptionsBaseCheckButtonTemplate">
                 <Anchors>
                     <Anchor point="TOPLEFT" relativeTo="$parentSubText" relativePoint="BOTTOMLEFT">
                         <Offset>
@@ -81,7 +81,7 @@
                     </OnLoad>
                 </Scripts>
             </CheckButton>
-            <CheckButton name="$parentUpgradesSummary" inherits="OptionsCheckButtonTemplate">
+            <CheckButton name="$parentUpgradesSummary" inherits="OptionsBaseCheckButtonTemplate">
                 <Anchors>
                     <Anchor point="TOPLEFT" relativeTo="$parentUpgrades" relativePoint="BOTTOMLEFT">
                         <Offset>
@@ -95,7 +95,7 @@
                     </OnLoad>
                 </Scripts>
             </CheckButton>
-            <CheckButton name="$parentCharacter" inherits="OptionsCheckButtonTemplate">
+            <CheckButton name="$parentCharacter" inherits="OptionsBaseCheckButtonTemplate">
                 <Anchors>
                     <Anchor point="TOPLEFT" relativeTo="$parentUpgradesSummary" relativePoint="BOTTOMLEFT">
                         <Offset>
@@ -109,7 +109,7 @@
                     </OnLoad>
                 </Scripts>
             </CheckButton>
-            <CheckButton name="$parentInspection" inherits="OptionsCheckButtonTemplate">
+            <CheckButton name="$parentInspection" inherits="OptionsBaseCheckButtonTemplate">
                 <Anchors>
                     <Anchor point="TOPLEFT" relativeTo="$parentCharacter" relativePoint="BOTTOMLEFT">
                         <Offset>
@@ -123,7 +123,7 @@
                     </OnLoad>
                 </Scripts>
             </CheckButton>
-            <CheckButton name="$parentSmall" inherits="OptionsCheckButtonTemplate">
+            <CheckButton name="$parentSmall" inherits="OptionsBaseCheckButtonTemplate">
                 <Anchors>
                     <Anchor point="TOPLEFT" relativeTo="$parentInspection" relativePoint="BOTTOMLEFT">
                         <Offset>
@@ -137,7 +137,7 @@
                     </OnLoad>
                 </Scripts>
             </CheckButton>
-            <CheckButton name="$parentColor" inherits="OptionsCheckButtonTemplate">
+            <CheckButton name="$parentColor" inherits="OptionsBaseCheckButtonTemplate">
                 <Anchors>
                     <Anchor point="TOPLEFT" relativeTo="$parentSmall" relativePoint="BOTTOMLEFT">
                         <Offset>
@@ -151,7 +151,7 @@
                     </OnLoad>
                 </Scripts>
             </CheckButton>
-            <CheckButton name="$parentDebug" inherits="OptionsCheckButtonTemplate">
+            <CheckButton name="$parentDebug" inherits="OptionsBaseCheckButtonTemplate">
                 <Anchors>
                     <Anchor point="TOPLEFT" relativeTo="$parentColor" relativePoint="BOTTOMLEFT">
                         <Offset>

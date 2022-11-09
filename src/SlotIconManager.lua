@@ -84,6 +84,12 @@ function SlotIconManager:Debug(...)
     addonNamespace.Debug('SlotIconManager(' .. self.adapter:GetType() .. '):', ...)
 end
 
+local factionLogoTextures = {
+    ["Alliance"]    = "Interface\\Timer\\Alliance-Logo",
+    ["Horde"]       = "Interface\\Timer\\Horde-Logo",
+    ["Neutral"]     = "Interface\\Timer\\Panda-Logo",
+};
+
 function SlotIconManager:Init()
     self:Debug('Init')
 
@@ -93,6 +99,11 @@ function SlotIconManager:Init()
     self.adapter:OnShow(function()
         self:Debug('OnShow')
         self.parentVisible = true
+        if self.adapter:GetUnit() == "player" then
+            CharacterFrame_UpdatePortrait()
+        else
+            InspectFrame:SetPortraitToUnit(self.adapter:GetUnit());
+        end
         self:Refresh()
     end)
 

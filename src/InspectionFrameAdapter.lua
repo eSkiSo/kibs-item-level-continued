@@ -9,7 +9,7 @@ local InspectionFrameAdapterMetaTable = { __index = InspectionFrameAdapter }
 setmetatable(InspectionFrameAdapter, { __index = addonNamespace.FrameAdapter })
 
 function InspectionFrameAdapter:new()
-    local instance = addonNamespace.FrameAdapter:new(InspectModelFrame, PaperDollFrame, 'Inspect')
+    local instance = addonNamespace.FrameAdapter:new(InspectFrame, InspectPaperDollFrame, 'Inspect')
 
     instance.messages = {
         contentChanged = 'InspectionFrameAdapter.contentChanged',

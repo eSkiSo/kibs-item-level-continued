@@ -3,7 +3,7 @@ local addonNamespace = LibStub and LibStub(addonName .. "-1.0", true)
 if not addonNamespace or addonNamespace.loaded.AddOn then return end
 addonNamespace.loaded.AddOn = true
 
---LoadAddOn("Blizzard_InspectUI")
+UIParentLoadAddOn("Blizzard_InspectUI")
 
 local L = addonNamespace.L
 
@@ -34,7 +34,7 @@ function AddOn:OnInitialize()
     addonNamespace.Debug("Added Frame")
     frame:SetScript("OnEvent", function(this, event,...)
         local args = {...}
-        addonNamespace.Debug("Addon event ", args[1])
+        --addonNamespace.Debug("Addon event ", args[1])
         if event == "ADDON_LOADED" and args[1] == "Blizzard_InspectUI" then
             addonNamespace.Debug("Blizzard_InspectUI is here")
             self.inspectorSlotIconManager = addonNamespace.SlotIconManager:new(addonNamespace.InspectionFrameAdapter:new())
@@ -81,11 +81,11 @@ function AddOn:OnInitialize()
 
     self:RegisterChatCommand("kibc", function(input)
         if not input or input:trim() == "" then
-            InterfaceOptionsFrame_OpenToCategory(self.configPanel)
+            Settings.OpenToCategory(self.configPanel)
 
-            InterfaceOptionsFrameTab2:Click("LeftButton", true)
+            --InterfaceOptionsFrameTab2:Click("LeftButton", true)
 
-            for _, button in pairs(self:FindFrames("InterfaceOptionsFrameAddOnsButton")) do
+            for _, button in pairs(self:FindFrames("SettingsPanel.AddOnsTab")) do
                 if button.Click and button.GetText and button:GetText() == self.configPanel.name then
                     button:Click("LeftButton", true)
                     break
@@ -97,7 +97,7 @@ function AddOn:OnInitialize()
     end)
 
     self.playerSlotIconManager = addonNamespace.SlotIconManager:new(addonNamespace.CharacterFrameAdapter:new())
-    --self.inspectorSlotIconManager = addonNamespace.SlotIconManager:new(addonNamespace.InspectionFrameAdapter:new())
+    self.inspectorSlotIconManager = addonNamespace.SlotIconManager:new(addonNamespace.InspectionFrameAdapter:new())
 
     self.db.RegisterCallback(self, "OnProfileChanged", function()
         self:Debug("OnProfileChanged")
@@ -171,7 +171,7 @@ function AddOn:OnInitialize()
 --        if unit == 'player' then
 --            self.playerSlotIconManager:Refresh()
 --        else
---            self.inspectorSlotIconManager:Refresh()
+--            self.playerSlotIconManager:Refresh()
 --        end
 --    end)
 --
@@ -192,7 +192,7 @@ function AddOn:OnInitialize()
 --
 --    self:RegisterEvent("INSPECT_READY", function()
 --        self:Debug("INSPECT_READY")
---        self.inspectorSlotIconManager:Refresh()
+--        self.playerSlotIconManager:Refresh()
 --    end)
 
     self:ApplyStyle()
@@ -226,11 +226,11 @@ function AddOn:ApplyStyle()
     self.playerSlotIconManager:SetStyle(playerSlotIconManager)
 
     if IsAddOnLoaded("Blizzard_InspectUI") then
-        local inspectorSlotIconManager = style
+        local playerSlotIconManager = style
         if self.db.profile.Inspection then
-            inspectorSlotIconManager = inspectorSlotIconManager + addonNamespace.SlotIconManager.STYLE.ENABLED
+            playerSlotIconManager = playerSlotIconManager + addonNamespace.SlotIconManager.STYLE.ENABLED
         end
-        self.inspectorSlotIconManager:SetStyle(inspectorSlotIconManager)
+        self.playerSlotIconManager:SetStyle(playerSlotIconManager)
     end
 end
 

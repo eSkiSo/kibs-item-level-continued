@@ -9,6 +9,8 @@ local FrameAdapter = {}
 local FrameAdapterMetaTable = { __index = FrameAdapter }
 
 function FrameAdapter:new(frame, utilityParentFrame, slotFramePrefix)
+    --addonNamespace.Debug('FRAME??')
+    --addonNamespace.Debug(frame)
     local instance = {
         frame = frame,
         utilityParentFrame = utilityParentFrame,

@@ -9,7 +9,8 @@ local CharacterFrameAdapterMetaTable = { __index = CharacterFrameAdapter }
 setmetatable(CharacterFrameAdapter, { __index = addonNamespace.FrameAdapter })
 
 function CharacterFrameAdapter:new()
-    local instance = addonNamespace.FrameAdapter:new(CharacterModelFrame, CharacterModelFrame, 'Character')
+    --local instance = addonNamespace.FrameAdapter:new(CharacterModelFrame, CharacterModelFrame, 'Character')
+    local instance = addonNamespace.FrameAdapter:new(CharacterFrame, PaperDollFrame, 'Character')
 
     instance.messages = {
         contentChanged = 'CharacterFrameAdapter.contentChanged',
